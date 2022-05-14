@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <h2>{{firstName + " " + lastName}}</h2>
+    <h2>{{score >= 60 ? '及格' : '不及格'}}</h2>
+    <h2>{{message.split(" ").reverse().join("")}}</h2>
+  </template>
+
+  <script src="../../js/vue.js"></script>
+  <script>
+    const App = {
+      template: '#my-app',
+      data() {
+        return {
+          firstName: "Kobe",
+          lastName: "Bryant",
+          score: 80,
+          message: "Hello World"
+        }
+      },
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>
