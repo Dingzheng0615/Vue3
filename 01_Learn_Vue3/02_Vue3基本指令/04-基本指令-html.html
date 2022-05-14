@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- <div>
+    <span style="color:red; background: blue;">hhsfdgsh<span>
+  </div> -->
+
+  <template id="my-app">
+    <div>{{msg}}</div>
+    <div v-html="msg"></div>
+    </template>
+
+    <script src="../../js/vue.js"></script>
+    <script>
+      const App = {
+        template: '#my-app',
+        data() {
+          return {
+            msg: '<span style="color:red; background: blue;">hhh<span>'
+          }
+        },
+      }
+
+      Vue.createApp(App).mount('#app');
+    </script>
+
+</body>
+
+</html>

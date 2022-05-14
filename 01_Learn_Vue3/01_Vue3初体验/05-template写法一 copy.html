@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="x-template" id="why">
+    <div> 
+      <h2>{{message}}</h2>
+      <h2>{{counter}}</h2>
+      <button @click='increment'>+1</button>
+      <button @click='decrement'>-1</button>
+    </div>
+  </script>
+
+  <script>
+    const app = Vue.createApp({
+      template: `#why`,
+      data() {
+        return {
+          message: "Hello World",
+          counter: 100
+        }
+      },
+      //定义各种方法
+      methods: {
+        increment() {
+          this.counter++;
+        },
+        decrement() {
+          this.counter--;
+        }
+      },
+    }).mount('#app');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <ul>
+      <template v-for="(value,key) in info">
+        <li>{{key}}</li>
+        <li>{{value}}</li>
+        <li class="divider"></li>
+      </template>
+    </ul>
+  </template>
+
+  <script src="../../js/vue.js"></script>
+  <script>
+    const App = {
+      template: '#my-app',
+      data() {
+        return {
+          info:{
+            name:"dz",
+            age:18,
+            height: 1.93
+          }
+        }
+      },
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>

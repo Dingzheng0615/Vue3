@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <!-- 1.Mustache的基本使用 -->
+    <h2>{{message}}</h2>
+    <!-- 2.是一个表达式 -->
+    <h2>{{counter*10}}</h2>
+    <h2>{{message.split(" ").reverse().join(" ")}}</h2>
+    <!-- 3.也可以调用函数 -->
+    <!-- 可以使用computed（计算属性） -->
+    <h2>{{getReverseMessage()}}</h2>
+    <!-- 4.三元运算符 -->
+    <h2>{{isShow?"hhh":"dd"}}</h2>
+    <button @click="toggle">切换</button>
+
+    <!-- 错误用法 -->
+    <!-- <h2>{{var name = "abc"}}</h2>
+    <h2>{{if(isShow){ return"hhh"}}}</h2> -->
+  </template>
+
+  <script>
+    const app = Vue.createApp({
+      template: '#my-app',
+      data() {
+        return {
+          message: "Hello World",
+          counter: 100,
+          isShow: true
+        }
+      },
+
+      methods: {
+        getReverseMessage() {
+          return this.message.split(" ").reverse().join(" ");
+        },
+        toggle() {
+          this.isShow = !this.isShow;
+        }
+      },
+
+
+    }).mount('#app');
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <div :class="['abc', title]">hhh</div>
+    <div :class="['abc', title, isActive ? 'active': '']">hhh</div>
+    <div :class="['abc', title, {active: isActive }]">hhh</div>
+  </template>
+
+  <script src="../../js/vue.js"></script>
+  <script>
+    const App = {
+      template: '#my-app',
+      data() {
+        return {
+          title: "cba",
+          isActive: true,
+        }
+      },
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>

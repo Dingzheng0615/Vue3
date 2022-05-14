@@ -1,0 +1,40 @@
+{
+	"create vue app": {
+		"prefix": "vueapp",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html>",
+			"",
+			"<head>",
+			"  <meta charset=\"UTF-8\">",
+			"  <title>Title</title>",
+			"</head>",
+			"",
+			"<body>",
+			"  <div id=\"app\"></div>",
+			"",
+			"  <template id=\"my-app\">",
+			"    ",
+			"  </template>",
+			"",
+			"  <script src=\"../../js/vue.js\"></script>",
+			"  <script>",
+			"    const App = {",
+			"      template: '#my-app',",
+			"      data() {",
+			"        return {",
+			"          $0",
+			"        }",
+			"      },",
+			"    }",
+			"",
+			"    Vue.createApp(App).mount('#app');",
+			"  </script>",
+			"",
+			"</body>",
+			"",
+			"</html>"
+		],
+		"description": "create vue app"
+	}
+}

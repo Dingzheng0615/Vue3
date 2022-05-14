@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <h2>电影列表</h2>
+    <ul>
+      <li v-for="(movie,index) in movies">{{index+1}}.{{movie}}</li>
+    </ul>
+    <input type="text" v-model="newMovie">
+    <button @click="addMovie">添加电影</button>
+  </template>
+
+  <script src="../../js/vue.js"></script>
+  <script>
+    const App = {
+      template: '#my-app',
+      data() {
+        return {
+          newMovie:"",
+          movies:[
+            "kongfu",
+            "avanda",
+            "eva"
+          ],
+        }
+      },
+      methods: {
+        addMovie(){
+          this.movies.push(this.newMovie);
+          this.newMovie="";
+        }
+      },
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>
