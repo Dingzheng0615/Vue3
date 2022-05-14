@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <h2>{{fullName}}</h2>
+    <h2>{{result}}</h2>
+    <h2>{{reverseMessage}}</h2>
+  </template>
+
+  <script src="../../js/vue.js"></script>
+  <script>
+    const App = {
+      template: '#my-app',
+      data() {
+        return {
+          firstName: "Kobe",
+          lastName: "Bryant",
+        }
+      },
+      computed: {
+        //定义了一个计算属性叫fullname
+        fullName() {
+          return this.firstName + " " + this.lastName;
+        },
+      },
+      methods: {
+        
+      }
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>
