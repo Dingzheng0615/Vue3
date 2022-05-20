@@ -20,7 +20,18 @@
       template: '#my-app',
       data() {
         return {
-          question: "hello"
+          // 监听question的变化时，去进行一些逻辑的处理（JavaScript，网络请求）
+          question: "Hello World",
+          answer: ""
+        }
+      },
+      watch: {
+        //question监听的data中的属性的名称
+        //newValue变化后的新值
+        //oldValue变化前的旧值
+        question(newValue,oldValue){
+          console.log("新值：",newValue, "旧值",oldValue);
+          this.queryAnswer();
         }
       },
       methods: {
