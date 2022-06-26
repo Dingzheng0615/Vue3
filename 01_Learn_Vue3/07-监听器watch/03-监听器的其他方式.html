@@ -14,6 +14,7 @@
     <button @click="changeInfo">changeInfo</button>
     <button @click="changeInfoName">changeInfo.name</button>
     <button @click="changeInfoNbaName">changeInfo.nba.name</button>
+    <button @click="changeFriendsName">changeFriends[0].name</button>
   </template>
 
   <script src="../../js/vue.js"></script>
@@ -28,11 +29,17 @@
             nba: {
               name: 'kobe'
             }
-          }
+          },
+          friends: [{ name: "why" }, { name: "kobe" }]
         }
       },
       watch: {
-
+        "info.name": function (newName, oldName) {
+          console.log(newName, oldName);
+        },
+        "friends[0].name": function (newName, oldName) {
+          console.log(newName, oldName);
+        }
       },
       methods: {
         changeInfo() {
@@ -44,6 +51,18 @@
         changeInfoNbaName() {
           this.info.name = "james";
         },
+        changeFriendsName() {
+          this.friends[0].name = "curry";
+        }
+      },
+      created() {
+        const unwatch = this.$watch("info", function (newInfo, oldInfo) {
+          console.log(newInfo, oldInfo);
+        }, {
+          deep: true,
+          immediate: true,
+        })
+        //unwatch(  )
       }
     }
 
