@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <script src="../../js/vue.js"></script>
+
+  <div id="app"></div>
+
+  <template id="my-app">
+    <input type="text" v-model="message">
+    <h2>{{message}}</h2>
+  </template>
+
+  <script>
+    const App = {
+      template: '#my-app',
+      data() {
+        return {
+          message : "Hello World"
+        }
+      },
+      methods: {
+        inputChange(event){
+          this.message = event.target.value;
+        }
+      }
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+
+</html>

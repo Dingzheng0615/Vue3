@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+  <div id="app"></div>
+
+  <template id="my-app">
+    <input type="text" v-model="message">
+    <h2>{{message}}</h2>
+
+    <h2>{{title}}</h2>
+    <p>{{desc}}</p>
+
+    <button @click="btn">dainji</button>
+  </template>
+
+  <script src="../../js/vue.js"></script>
+  <script>
+    const App = {
+      template: '#my-app',
+      data() {
+        return {
+          message : "Hello World",
+          title: "hhh",
+          desc: "asdadsa"
+        }
+      },
+      methods: {
+        btn(){
+          console.log("dianji");
+        }
+      }
+
+    } 
+
+    Vue.createApp(App).mount('#app');
+  </script>
+</body>
+
+</html>

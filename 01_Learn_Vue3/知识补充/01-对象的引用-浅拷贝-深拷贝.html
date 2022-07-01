@@ -18,11 +18,14 @@
 
   <!-- 2.对象的浅拷贝 -->
   <script>
-    // const info = { name: "why", age: 18, friend: {name: "kobe"} };
+    const info = { name: "why", age: 18, friend: {name: "kobe"} };
     // const obj = Object.assign({}, info);
 
-    // info.name = "kobe";
-    // console.log(obj.name);
+    // lodash
+    const obj = _.clone(info);
+
+    info.name = "kobe";
+    console.log(obj.name);
 
     // info.friend.name = "jas";
     // console.log(obj.friend.name);
@@ -31,6 +34,9 @@
   <!-- 3.对象的深拷贝 -->
   <script>
     // const info = { name: "why", age: 18, friend: {name: "kobe"} };
+    // const obj = JSON.parse(JSON.stringify(info));
+    // info.friend.name = "james";
+    // console.log(obj.friend.name);
     
   </script>
 </body>
